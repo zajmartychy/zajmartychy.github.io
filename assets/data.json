@@ -1,0 +1,73 @@
+[
+    {
+        "article": {
+            "title": "Tytuł artykułu (żółty)",
+            "id": 2,
+            "date": "2021-06-07",
+            "body": [
+                {
+                    "paragraph": [
+                        {
+                            "style": "fw-normal",
+                            "text": "This is a long paragraph written to show how the line-height of an element is affected by our utilities. Classes are applied to the element itself or sometimes the parent element. These classes can be customized as needed with our utility API. "
+                        },
+                        {
+                            "style": "fw-bold",
+                            "text": "bold text, then "
+                        },
+                        {
+                            "style": "fst-italic",
+                            "text": "italic text."
+                        }
+                    ]
+                },
+                {
+                    "paragraph": [
+                        {
+                            "text": "Normal text, then "
+                        },
+                        {
+                            "text": "bold text, then "
+                        },
+                        {
+                            "text": "italic text. "
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    {
+        "article": {
+            "title": "Article 2 Title",
+            "body": [
+                {
+                    "paragraph": [
+                        {
+                            "text": "Normal text, then "
+                        },
+                        {
+                            "text": "bold text, then "
+                        },
+                        {
+                            "text": "italic text. "
+                        }
+                    ]
+                },
+                {
+                    "paragraph": [
+                        {
+                            "text": "Normal text, then "
+                        },
+                        {
+                            "text": "bold text, then "
+                        },
+                        {
+                            "text": "italic text. "
+                        }
+                    ]
+                }
+            ]
+        }
+    }
+]
