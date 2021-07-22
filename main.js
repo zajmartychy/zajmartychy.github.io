@@ -67,7 +67,7 @@ class PeopleComponent {
         this.navigationEndSubscription = this.navigationEnd.subscribe(event => {
             console.log('People NavigationEnd: ', event);
             if (this.activatedRoute.firstChild == null) {
-                this.swapi.setPeoplePage('http://swapi.dev/api/people/?page=1');
+                this.swapi.setPeoplePage('https://swapi.dev/api/people/?page=1');
                 this.activatedChildId = '0';
             }
             else {
@@ -75,7 +75,7 @@ class PeopleComponent {
                 let characterId = parseInt(urls[0].path);
                 characterId = characterId > 0 ? characterId : 1;
                 characterId = parseInt(`${(characterId - 1) / 10}`) + 1;
-                this.swapi.setPeoplePage(`http://swapi.dev/api/people/?page=${characterId}`);
+                this.swapi.setPeoplePage(`https://swapi.dev/api/people/?page=${characterId}`);
                 this.activatedChildId = urls[0].path;
             }
         });
