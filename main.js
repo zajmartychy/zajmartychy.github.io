@@ -41,7 +41,7 @@ function PeopleComponent_li_12_Template(rf, ctx) { if (rf & 1) {
     const _r4 = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵgetCurrentView"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](0, "li", 9);
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](1, "span", 10);
-    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵlistener"]("click", function PeopleComponent_li_12_Template_span_click_1_listener() { _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵrestoreView"](_r4); const character_r1 = ctx.$implicit; const ctx_r3 = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵnextContext"](); return ctx_r3.navigateTo(character_r1.url.split("/")[character_r1.url.split("/").length - 2]); });
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵlistener"]("click", function PeopleComponent_li_12_Template_span_click_1_listener() { _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵrestoreView"](_r4); const character_r1 = ctx.$implicit; const ctx_r3 = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵnextContext"](); return ctx_r3.navigateTo(character_r1.url.split("/")[character_r1.url.split("/").length - 1]); });
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](2);
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
@@ -51,8 +51,8 @@ function PeopleComponent_li_12_Template(rf, ctx) { if (rf & 1) {
     const ctx_r0 = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵnextContext"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵattribute"]("data-index", i_r2);
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵadvance"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵpropertyInterpolate"]("routerLink", character_r1.url.split("/")[character_r1.url.split("/").length - 2]);
-    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵproperty"]("ngClass", _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵpureFunction1"](4, _c0, character_r1.url.split("/")[character_r1.url.split("/").length - 2] !== ctx_r0.activatedChildId));
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵpropertyInterpolate"]("routerLink", character_r1.url.split("/")[character_r1.url.split("/").length - 1]);
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵproperty"]("ngClass", _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵpureFunction1"](4, _c0, character_r1.url.split("/")[character_r1.url.split("/").length - 1] !== ctx_r0.activatedChildId));
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵadvance"](1);
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtextInterpolate"](character_r1.name);
 } }
@@ -439,7 +439,7 @@ class SwapiService {
         //   return this.http.get(page) as Observable<People>
         // }
         this.characterSource = new rxjs__WEBPACK_IMPORTED_MODULE_0__["Subject"]();
-        this.characters$ = this.characterSource.asObservable().pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_1__["switchMap"])(id => this.http.get(API_PATH_BASE + 'people/' + id).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_1__["catchError"])(error => {
+        this.characters$ = this.characterSource.asObservable().pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_1__["switchMap"])(id => this.http.get(API_PATH_BASE + 'people/' + id).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_1__["map"])(result => result.result.properties), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_1__["catchError"])(error => {
             this.setError(error);
             return new rxjs__WEBPACK_IMPORTED_MODULE_0__["Observable"]();
         }))));
@@ -447,12 +447,15 @@ class SwapiService {
         this.errors$ = this.errorSource.asObservable();
     }
     setPeoplePage(pageUrl) {
+        console.log('setPeoplePage', pageUrl);
         this.peopleSource.next(pageUrl);
     }
     setCurrentCharacter(id) {
+        console.log('setCurrentCharacter', id);
         return this.characterSource.next(id);
     }
     setError(error) {
+        console.log('setError', error);
         this.errorSource.next(error);
     }
     getPlanets() {
