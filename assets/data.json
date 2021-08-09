@@ -9,8 +9,9 @@
                     "paragraph": [
                         {
                             "style": "fw-normal",
-                            "text": "This is a long paragraph written to show how the line-height of an element is affected by our utilities. Classes are applied to the element itself or sometimes the parent element. These classes can be customized as needed with our utility API. "
-                        },
+                            "text": "Uniwersytet Ekonomiczny w Katowicach powstał w grudniu 1936 roku (na mocy dekretu Ministra Wyznań Religijnych i Oświecenia Publicznego Rzeczypospolitej Polskiej z 1936) jako prywatne Wyższe Studium Nauk Społeczno-Gospodarczych. Nauczanie rozpoczęto na jedynym wtedy Wydziale Organizacji Przemysłowej 11 stycznia 1937 roku i datę tę uważa się za początek działalności szkoły. W roku 1938 uruchomiony został Wydział Administracji Publicznej. Studia na obydwu wydziałach trwały trzy lata i miały charakter zawodowy. Organizatorem i pierwszym rektorem Uczelni był dr Józef Lisak. Pierwszą siedzibą lokalową stały się użyczone pomieszczenia obszernego gmachu ówczesnej znanej szkoły średniej – Śląskich Technicznych Zakładów Naukowych.
+
+"},
                         {
                             "style": "fw-bold",
                             "text": "bold text, then "
